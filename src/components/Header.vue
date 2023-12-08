@@ -1,52 +1,39 @@
 <template>
-  <div class="outer-container">
-    <div class="logo flex">
-      <h1>ACEITE TÉCNICO</h1>
-
-    </div>
-    <div class="flex nav">
-      <a href="">home</a>
-      <a href="">documents</a>
-      <a href="">piers</a>
-      <a href="">norms</a>
-    </div>
-  </div>
+  <v-app>
+    <v-app-bar app color="primary">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-img src="@/assets/logo.png" alt="Logo" max-height="40"></v-img>
+      <v-toolbar-title>Aceite Técnico</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn v-for="(item, index) in navItems" :key="index" @click="$router.push(item)">
+        {{ item }}
+      </v-btn>
+    </v-app-bar>
+  </v-app>
 </template>
 
+<script setup lang="ts">
+const navItems = ['home', 'navios', 'pedidos', 'documentos', 'login'];
+
+</script>
+
+
 <style scoped>
-.outer-container {
-  background-color: #303030;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 20vh;
-  color: white;
+.v-app-bar {
+  background-color: #2196f3 !important;
 }
 
-.logo {
-  width: 20vh;
-  min-height: 15vh;
-  padding: 1vh;
-  justify-self: flex-start;
-  border: 1px solid white;
-  margin: 1vh;
+.v-img {
+  max-height: 40px !important;
 }
 
-.nav {
-  width: 100%;
-  height: 100%;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-.nav a {
-  color: white;
-  padding: 0 3vh;
-  font-size: 1vw;
+.v-toolbar-title {
+  font-size: 1.5rem;
 }
 
-.flex{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.v-btn {
+  color: #ffffff !important;
+  margin: 0 10px;
 }
 </style>
+

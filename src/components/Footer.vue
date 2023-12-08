@@ -1,5 +1,6 @@
 <template>
   <div class="footer">
+    ©
     IFMA
     2023
   </div>

@@ -48,7 +48,8 @@ function login() {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  max-height: 15vh;
+  margin-bottom: 5vh;
   width: 100%;
 }
 
@@ -65,11 +66,11 @@ function login() {
 
 .login-box {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  padding: 5%;
   border-radius: 8px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   text-align: center;
-  height: 40vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
 }

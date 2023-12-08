@@ -9,10 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-div {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* height: 100%; */
-}
+
 </style>
 
 

@@ -2,75 +2,60 @@
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import { RouterLink } from 'vue-router';
+
+const user = {
+  name: 'Username',
+  photo: '@/assets/user-photo.jpg',
+  email: 'JXgkS@example.com',
+  // Outras informações do usuário
+}
 </script>
 
 <template>
-  <div>
-    <Header />
+  <Header />
 
-    <div class="main-container">
-      <main class="main">
-        <div class="item-container">
-          <RouterLink to="/pedidos" class="main-item">
-            Novo pedido de atracação
-          </RouterLink>
-        </div>
-      </main>
-    </div>
+  <v-app>
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <v-card>
+            <v-card-title class="teal lighten-1 white--text">
+              Dados do Usuário
+            </v-card-title>
+            <v-card-text>
+              <v-form @submit.prevent="">
+                <v-row>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="user.name" label="Nome"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="user.email" label="E-mail"></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-btn type="submit" color="teal">Salvar</v-btn>
+              </v-form>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 
-    <Footer />
-  </div>
+  <Footer />
 </template>
 
 <style scoped>
-.main-item {
-  width: 100%;
-  height: 5vh;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+.teal {
+  background-color: #00796b; /* Cor principal */
+  color: #121111; /* Cor do texto */
 }
 
-.main-item:hover {
-  background-color: rgb(113, 126, 163);
+.teal--text {
+  color: #00796b; /* Cor do texto em destaque */
+  
 }
 
-.item-container {
-  text-align: center;
-  background-color: rgb(93, 111, 159);
-}
-
-.main-container {
-  display: flex;
-  justify-content: center;
-  background-color: #828f92;
-}
-
-.main {
-  background-color: rgb(34, 46, 67);
-  margin: 4%;
-  min-height: 35vh;
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-}
-
-.main label {
-  color: white;
-}
-
-.main input {
-  width: 20vw;
-  height: 5vh;
-}
-
-@media screen and (max-width: 1000px) {
-  .main {
-    min-height: 55vh;
-    width: 60vw;
-  }
+.lighten-1 {
+  background-color: #b2dfdb; /* Cor mais clara para realce */
 }
 </style>
